@@ -7,17 +7,17 @@
   * how to configure:
   * TODO
   ***********************************************************/
-(function(window, undefined) {
-	var StaticLoader = function (config) {
-		if ( typeof(config) == "undefined" || config == null ) { config = {}; };
+  (function(window, undefined) {
+  	var StaticLoader = function (config) {
+  		if ( typeof(config) == "undefined" || config == null ) { config = {}; };
 
-		var _s = function(config) {
-			config: _extend({
-				paths: {},
-				baseUrl: null
-			}, config),
+  		var _s = function(config) {
+  			config: _extend({
+  				paths: {},
+  				baseUrl: null
+  			}, config),
 
-			load: function(staticPath) {
+  			load: function(staticPath) {
 				// load specific static resource
 				if (typeof(staticPath) === "undefined") {
 					_isJs(s) ? loadJs(s) : loadCss(s);
@@ -51,7 +51,7 @@
 			loadJs: function(path) {
 				if (typeof path === "string") {
 					var head = d.getElementsByTagName("head")[0],
-						script = window.document.createElement( "script" );
+					script = window.document.createElement( "script" );
 					script.src = src;
 					script.async = true;
 					script.type = "text/javascript";
@@ -65,13 +65,13 @@
 			loadCss: function(path) {
 				if (typeof path === "string") {
 					var head = d.getElementsByTagName("head")[0],
-	                	style = d.createElement("link");
-		            style.href = path + ".css";
-		            style.rel = "stylesheet";
-		            style.type = "text/css";
-		            style.charset = "utf-8";
-		            style.appendChild(style);
-		            return style;
+					style = d.createElement("link");
+					style.href = path + ".css";
+					style.rel = "stylesheet";
+					style.type = "text/css";
+					style.charset = "utf-8";
+					style.appendChild(style);
+					return style;
 				}
 				return null;
 			}
